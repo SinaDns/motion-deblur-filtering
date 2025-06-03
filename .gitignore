@@ -1,9 +1,8 @@
 # -----------------------
 # Ignore data folder
 # -----------------------
-data/
-*.zip
-*.tar.gz
+data/*
+!data/README.md
 
 # Ignore Kaggle credentials if accidentally committed
 kaggle.json

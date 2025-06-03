@@ -1,0 +1,25 @@
+# -----------------------
+# Ignore data folder
+# -----------------------
+data/
+*.zip
+*.tar.gz
+
+# Ignore Kaggle credentials if accidentally committed
+kaggle.json
+
+# Ignore intermediate medical formats (if you generate any)
+*.dcm
+*.nii
+*.nii.gz
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# OS or editor-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

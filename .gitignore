@@ -4,6 +4,8 @@
 data/*
 !data/README.md
 
+reports/*
+
 # Ignore Kaggle credentials if accidentally committed
 kaggle.json
 

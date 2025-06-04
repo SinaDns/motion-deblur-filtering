@@ -1,9 +1,14 @@
 # config.py
+import os
 
 # Paths
-SOURCE_DIR = "data/original_images"
-OUTPUT_DIR = "data/degraded_images"
-RESULTS_DIR = "reports/figures"
+
+# Now build absolute paths:
+#TODO: should be replaced with the root path from project
+SOURCE_DIR  = "/Users/raya/Desktop/motion-deblur-filtering/data/original_images"
+OUTPUT_DIR  = "/Users/raya/Desktop/motion-deblur-filtering/data/degraded_images"
+RESULTS_DIR = "/Users/raya/Desktop/motion-deblur-filtering/reports/figures"
+
 
 # Degradation parameters
 PSF_SIZE = 21            # e.g. kernel size for blur

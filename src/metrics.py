@@ -45,10 +45,4 @@ def evaluate_metrics(
                "SSIM_wiener": compute_ssim(original, restored_wiener), "MSE_degraded": compute_mse(original, degraded),
                "MSE_inverse": compute_mse(original, restored_inv), "MSE_wiener": compute_mse(original, restored_wiener)}
 
-    # PSNR
-
-    # SSIM
-
-    # MSE
-
     return metrics

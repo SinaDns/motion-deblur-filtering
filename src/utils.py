@@ -108,7 +108,7 @@ def degrade_image(
     # 2) Add Gaussian noise (variance no less than 0)
     std = np.sqrt(max(0.0, float(noise_var)))
     noise = np.random.normal(loc=float(noise_mean), scale=std, size=original.shape)
-    degraded = blurred + noise
+    degraded = blurred #+ noise
 
     # 3) Replace any NaN/inf then clip to [0,1]
     degraded = np.nan_to_num(degraded, nan=0.0, posinf=1.0, neginf=0.0)

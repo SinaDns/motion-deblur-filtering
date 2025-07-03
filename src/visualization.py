@@ -1,4 +1,4 @@
-# src/visualization.py
+import json
 
 import matplotlib.pyplot as plt
 import os
@@ -31,4 +31,35 @@ def plot_comparison(
     if save_path:
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=150)
-    plt.show()
+    #plt.show()
+
+
+def plot_metrics(json_path,save_path: str = None) -> None:
+    """
+    Plots bar charts for PSNR, SSIM, and MSE from a single JSON file.
+
+    Args:
+        json_path (str): Path to the JSON file containing scalar metrics.
+    """
+    # Load JSON data
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+
+    metrics = ['PSNR', 'SSIM', 'MSE']
+    methods = ['degraded', 'inverse', 'wiener']
+
+    for metric in metrics:
+        values = [data[f"{metric}_{method}"] for method in methods]
+
+        plt.figure(figsize=(6, 4))
+        plt.bar(methods, values, color=['gray', 'orange', 'green'])
+        plt.title(f'{metric} Comparison')
+        plt.ylabel(metric)
+        plt.xlabel('Method')
+        plt.grid(axis='y')
+        plt.tight_layout()
+        plt.show()
+        plt.savefig(save_path, dpi=150)
+
+
+

@@ -1,6 +1,5 @@
 import json
 import matplotlib.pyplot as plt
-import numpy as np
 from pathlib import Path
 
 json_path = Path(__file__).parent.parent / "reports" / "metrics" / "results_0.jpg.json"
@@ -14,7 +13,6 @@ psnr = [data[f'PSNR_{m.lower()}'] for m in methods]
 ssim = [data[f'SSIM_{m.lower()}'] for m in methods]
 mse  = [data[f'MSE_{m.lower()}']  for m in methods]
 
-# --- Plot ---
 plt.figure(figsize=(7,5))
 
 plt.plot(methods, psnr, marker='o', label='PSNR')

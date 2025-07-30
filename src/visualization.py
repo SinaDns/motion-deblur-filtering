@@ -12,12 +12,7 @@ def plot_comparison(
         restored_wiener: np.ndarray,
         save_path: str = None
 ) -> None:
-    """
-    Create a 2×2 figure showing:
-      [Original]    [Degraded]
-      [Inverse-restored] [Wiener-restored]
-    If save_path is not None, saves the figure to disk.
-    """
+
     fig, axes = plt.subplots(2, 2, figsize=(10, 8))
     titles = ["Original", "Degraded", "Inverse Filter", "Wiener Filter"]
     images = [original, degraded, restored_inv, restored_wiener]
@@ -31,17 +26,10 @@ def plot_comparison(
     if save_path:
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=150)
-    #plt.show()
 
 
 def plot_metrics(json_path,save_path: str = None) -> None:
-    """
-    Plots bar charts for PSNR, SSIM, and MSE from a single JSON file.
 
-    Args:
-        json_path (str): Path to the JSON file containing scalar metrics.
-    """
-    # Load JSON data
     with open(json_path, 'r') as f:
         data = json.load(f)
 

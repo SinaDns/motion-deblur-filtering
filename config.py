@@ -14,8 +14,7 @@ BLUR_PARAM = 0.5         # e.g. motion angle or gaussian sigma
 NOISE_MEAN = 0.0
 NOISE_VARIANCE = 0.001   # variance of additive Gaussian noise
 
-# Wiener filter parameters
-# If you want to assume a constant noise/signal power ratio, define K:
+
 WIENER_K = 0.01
 
 # Metric computation flags
